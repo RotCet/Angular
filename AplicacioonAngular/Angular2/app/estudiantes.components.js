@@ -77,7 +77,7 @@ var EstudiantesComponent = (function () {
     EstudiantesComponent = __decorate([
         core_1.Component({
             selector: 'estudiantes',
-            template: 'app/templates/estudiantes.templates.html'
+            templateUrl: 'app/templates/estudiantes.templates.html'
         })
     ], EstudiantesComponent);
     return EstudiantesComponent;

@@ -12,7 +12,7 @@ import {Component,Input, Output,EventEmitter} from '@angular/core'
 
 @Component({
    selector:'estudiantes',
-   template:'app/templates/estudiantes.templates.html'
+   templateUrl:'app/templates/estudiantes.templates.html'
 }) 
 export class EstudiantesComponent{
     //variable para conectar diferentes componentes con un decorador @
@@ -36,7 +36,7 @@ export class EstudiantesComponent{
         this.titulo=evento.target.value;
     }
     listaEstudiantes():Array<string>{
-            if(this.universidad=="Universidad Nacional KBAE"){
+           if(this.universidad=="Universidad Nacional KBAE"){
                 return ['Karla','Driana'];
             }
             else{

@@ -2,13 +2,15 @@
    <div [style.padding]="pading?40:0">
     <h3>{{titulo}}</h3>
         {{titulo}} <br>
+        <div *ngIf="listaEstudiantes().length > 0">
         <ul>
-            <li *ngFor="let estudiante of estudiantes">
+            <li *ngFor="let estudiante of listaEstudiantes()">
               <span (click)="ClicEstudiante($event)"> 
                  {{estudiante}}
             </span>
             </li>
         </ul>
+    </div>
     <br>
     <button (click)="alerta()">Test</button>
     <input type="text" [(ngModel)]="titulo"/>
@@ -18,11 +20,13 @@
     <br>
     <img src="{{imagenUR}}" [class.img-rounded]="redondeada" />
     <br>
-    <ul>
-        <li *ngFor="let estudianteU of listaEstudiantes()">
-            {{estudianteU}}
-        </li>
-    </ul>
+    
+        <ul>
+            <li *ngFor="let estudiante of estudiantes">
+                {{estudiante}}
+            </li>
+        </ul>
+    
     <br>
     <ul>
     <li *ngFor="let materias of listaMaterias()">
@@ -35,4 +39,7 @@
         <li *ngFor="let maestro of listaMaestros()">         
         {{maestro}} </li>
     </ul>
+</div>
+<div *ngIf="listaEstudiantes().length==0">
+    <span>No hay ningun estudiante</span>
 </div>
