@@ -1,0 +1,38 @@
+
+   <div [style.padding]="pading?40:0">
+    <h3>{{titulo}}</h3>
+        {{titulo}} <br>
+        <ul>
+            <li *ngFor="let estudiante of estudiantes">
+              <span (click)="ClicEstudiante($event)"> 
+                 {{estudiante}}
+            </span>
+            </li>
+        </ul>
+    <br>
+    <button (click)="alerta()">Test</button>
+    <input type="text" [(ngModel)]="titulo"/>
+    <br>
+        <button (click)="titulo=''">Test</button>
+        <input type="text" [value]="titulo" (input)=cambiar($event)/>
+    <br>
+    <img src="{{imagenUR}}" [class.img-rounded]="redondeada" />
+    <br>
+    <ul>
+        <li *ngFor="let estudianteU of listaEstudiantes()">
+            {{estudianteU}}
+        </li>
+    </ul>
+    <br>
+    <ul>
+    <li *ngFor="let materias of listaMaterias()">
+        {{materias}}
+    </li>
+    
+</ul>
+<br>
+    <ul>
+        <li *ngFor="let maestro of listaMaestros()">         
+        {{maestro}} </li>
+    </ul>
+</div>

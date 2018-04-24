@@ -28,6 +28,7 @@ var EstudiantesComponent = (function () {
         this.imagenUR = "https://gcdn.emol.cl/mascotas/files/2018/03/perro-raro.jpg";
         this.redondeada = true;
         this.pading = true;
+        this.n = 1;
     }
     EstudiantesComponent.prototype.alerta = function () {
         alert("si funciona");
@@ -51,6 +52,9 @@ var EstudiantesComponent = (function () {
             return ['Español', 'Mate'];
         }
     };
+    EstudiantesComponent.prototype.listaMaestros = function () {
+        return ['David', 'Ernesto'];
+    };
     EstudiantesComponent.prototype.ClicEstudiante = function (evento) {
         this.seleccionados.emit({ nombre: evento.target.textContent });
     };
@@ -63,13 +67,17 @@ var EstudiantesComponent = (function () {
         __metadata("design:type", String)
     ], EstudiantesComponent.prototype, "materias", void 0);
     __decorate([
+        core_1.Input('mis-maestros'),
+        __metadata("design:type", String)
+    ], EstudiantesComponent.prototype, "maestros", void 0);
+    __decorate([
         core_1.Output(),
         __metadata("design:type", Object)
     ], EstudiantesComponent.prototype, "seleccionados", void 0);
     EstudiantesComponent = __decorate([
         core_1.Component({
             selector: 'estudiantes',
-            template: "\n   <div [style.padding]=\"pading?40:0\">\n    <h3>{{titulo}}</h3>\n        {{titulo}} <br>\n        <ul>\n            <li *ngFor=\"let estudiante of estudiantes\">\n              <span (click)=\"ClicEstudiante($event)\"> \n                 {{estudiante}}\n            </span>\n            </li>\n        </ul>\n    <br>\n    <button (click)=\"alerta()\">Test</button>\n    <input type=\"text\" [(ngModel)]=\"titulo\"/>\n    <br>\n        <button (click)=\"titulo=''\">Test</button>\n        <input type=\"text\" [value]=\"titulo\" (input)=cambiar($event)/>\n    <br>\n    <img src=\"{{imagenUR}}\" [class.img-rounded]=\"redondeada\" />\n    <br>\n    <ul>\n        <li *ngFor=\"let estudianteU of listaEstudiantes()\">\n            {{estudianteU}}\n        </li>\n    </ul>\n    <br>\n    <ul>\n    <li *ngFor=\"let materias of listaMaterias()\">\n        {{materias}}\n    </li>\n    \n</ul>\n</div>\n"
+            template: 'app/templates/estudiantes.templates.html'
         })
     ], EstudiantesComponent);
     return EstudiantesComponent;

@@ -11,6 +11,7 @@ var AppComponent = (function () {
     function AppComponent() {
         this.laUniversodad = "Universidad Nacional KBAE";
         this.laMateria = "8";
+        this.losMaestros = "Maestros";
     }
     AppComponent.prototype.mostrarEstrudiante = function (evento) {
         alert(evento.nombre);
@@ -18,7 +19,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'mi-aplicacion',
-            template: "<h1>Bienvenidos</h1>\n            <estudiantes [mi-universidad]=\"laUniversidad\" [mis-materias]=\"LaMateria\" \n                          (seleccionados)=mostrarEstrudiante($event) ></estudiantes>\n\n            "
+            template: "<h1>Bienvenidos</h1>        \n           \n            <estudiantes [mi-universidad]=\"laUniversidad\" \n            [mis-materias]=\"LaMateria\"  [mis-maestros]=\"losMaestros\"\n            (seleccionados)=mostrarEstrudiante($event) \n            ></estudiantes>\n\n            "
         })
     ], AppComponent);
     return AppComponent;

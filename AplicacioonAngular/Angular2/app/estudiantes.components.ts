@@ -12,45 +12,13 @@ import {Component,Input, Output,EventEmitter} from '@angular/core'
 
 @Component({
    selector:'estudiantes',
-   template:`
-   <div [style.padding]="pading?40:0">
-    <h3>{{titulo}}</h3>
-        {{titulo}} <br>
-        <ul>
-            <li *ngFor="let estudiante of estudiantes">
-              <span (click)="ClicEstudiante($event)"> 
-                 {{estudiante}}
-            </span>
-            </li>
-        </ul>
-    <br>
-    <button (click)="alerta()">Test</button>
-    <input type="text" [(ngModel)]="titulo"/>
-    <br>
-        <button (click)="titulo=''">Test</button>
-        <input type="text" [value]="titulo" (input)=cambiar($event)/>
-    <br>
-    <img src="{{imagenUR}}" [class.img-rounded]="redondeada" />
-    <br>
-    <ul>
-        <li *ngFor="let estudianteU of listaEstudiantes()">
-            {{estudianteU}}
-        </li>
-    </ul>
-    <br>
-    <ul>
-    <li *ngFor="let materias of listaMaterias()">
-        {{materias}}
-    </li>
-    
-</ul>
-</div>
-`
-})
+   template:'app/templates/estudiantes.templates.html'
+}) 
 export class EstudiantesComponent{
     //variable para conectar diferentes componentes con un decorador @
     @Input('mi-universidad') universidad:string; /// es necesario importar la libreria para el decorador y se puedes modificar el nombre que se está mostrando
     @Input('mis-materias') materias:string;
+    @Input('mis-maestros') maestros:string;
     @Output() seleccionados= new EventEmitter();
     //Agrega Contenido a la clase y agrega una interpolacion
     titulo="Lista de Estudiantes";
@@ -59,7 +27,7 @@ export class EstudiantesComponent{
     imagenUR="https://gcdn.emol.cl/mascotas/files/2018/03/perro-raro.jpg";
     redondeada=true;
     pading=true;
-
+    n=1;
     alerta(){
         alert("si funciona");
         
@@ -85,8 +53,12 @@ export class EstudiantesComponent{
         }
        
     }
+    listaMaestros():Array<string>{        
+            return ['David','Ernesto'];       
+    }
     ClicEstudiante(evento):void{
         this.seleccionados.emit({nombre: evento.target.textContent});
     }
+  
 }
 
