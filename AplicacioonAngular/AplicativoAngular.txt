@@ -1,0 +1,7 @@
+Componentes
+Enrutamiento
+    para compartir UR
+Directivas
+    Hacer cambios en nuestras paginas con decoradores con Metadata
+    Estructurales: DOM
+    Atributo: Añadir CSS o Class (Apariencia o comportamiento)
