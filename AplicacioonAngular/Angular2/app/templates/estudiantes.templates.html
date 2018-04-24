@@ -4,9 +4,9 @@
         {{titulo}} <br>
         <div *ngIf="listaEstudiantes().length > 0">
         <ul>
-            <li *ngFor="let estudiante of listaEstudiantes()">
+            <li *ngFor="let estudiante of listaEstudiantes(); let i=index">
               <span (click)="ClicEstudiante($event)"> 
-                 {{estudiante}}
+                {{i}}-- {{estudiante.nombre | uppercase}}  {{estudiante.apellido | uppercase}}--{{estudiante | json}}
             </span>
             </li>
         </ul>
@@ -18,7 +18,7 @@
         <button (click)="titulo=''">Test</button>
         <input type="text" [value]="titulo" (input)=cambiar($event)/>
     <br>
-    <img src="{{imagenUR}}" [class.img-rounded]="redondeada" />
+    <img src="{{imagenUR}}" [class.img-rounded]="redondeada"/>
     <br>
     
         <ul>

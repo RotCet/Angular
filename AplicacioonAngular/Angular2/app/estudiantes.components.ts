@@ -35,12 +35,12 @@ export class EstudiantesComponent{
     cambiar(evento){
         this.titulo=evento.target.value;
     }
-    listaEstudiantes():Array<string>{
+    listaEstudiantes():Array<object>{
            if(this.universidad=="Universidad Nacional KBAE"){
-                return ['Karla','Driana'];
+            return [{nombre: 'Karina',apellido:'Sanchez'},{nombre: 'Lupita',apellido:'Reyna'}];
             }
             else{
-                return ['Paulo','Eleazar'];
+                return [{nombre: 'Paulo',apellido:'Sanchez'},{nombre: 'Eleazar',apellido:'Reyna'}];
             }
     }
     listaMaterias():Array<string>{

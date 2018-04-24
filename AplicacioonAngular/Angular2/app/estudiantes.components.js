@@ -38,10 +38,10 @@ var EstudiantesComponent = (function () {
     };
     EstudiantesComponent.prototype.listaEstudiantes = function () {
         if (this.universidad == "Universidad Nacional KBAE") {
-            return ['Karla', 'Driana'];
+            return [{ nombre: 'Karina', apellido: 'Sanchez' }, { nombre: 'Lupita', apellido: 'Reyna' }];
         }
         else {
-            return ['Paulo', 'Eleazar'];
+            return [{ nombre: 'Paulo', apellido: 'Sanchez' }, { nombre: 'Eleazar', apellido: 'Reyna' }];
         }
     };
     EstudiantesComponent.prototype.listaMaterias = function () {

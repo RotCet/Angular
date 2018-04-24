@@ -12,13 +12,14 @@ var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var estudiantes_components_1 = require("./estudiantes.components");
 var maestos_components_1 = require("./maestos.components");
+var aFahrenheit_pipe_1 = require("./aFahrenheit.pipe");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, estudiantes_components_1.EstudiantesComponent, maestos_components_1.MaestrosComponent],
+            declarations: [app_component_1.AppComponent, estudiantes_components_1.EstudiantesComponent, maestos_components_1.MaestrosComponent, aFahrenheit_pipe_1.AFahrenheitPipe],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
