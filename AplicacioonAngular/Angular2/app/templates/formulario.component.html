@@ -1,10 +1,12 @@
-<form (ngSubmit)="enviarFormulario(formulario)" #formulario="ngForm">
+<form (ngSubmit)="enviarFormulario(formulario)" #formulario="ngForm"  class="panel-body"  >
+   
     <fieldset class="form-group">
-        <label for="nombre">Nombre</label>
+            <i class="glyphicon glyphicon-user"></i>
+           <label for="nombre">Usuario</label>          
         <input type="text"
                class="form-control"
                id="nombre"
-               ngModel 
+               [ngModel]="estudiante.nombre" 
                name="nombre"
                #nombre="ngModel"
                minlength="5"
@@ -23,11 +25,12 @@
     
     </fieldset>
     <fieldset class="form-group">
-        <label for="correo">Correo Electrónico</label>
-        <input type="email"
+       <i class="glyphicon glyphicon-envelope"></i>
+       <label for="correo">Correo Electrónico</label>
+       <input type="email"
                class="form-control"
                id="correoElectronico"
-               ngModel 
+               [ngModel]="estudiante.correo" 
                name="correo"
                #correo="ngModel"
                required>
@@ -35,7 +38,8 @@
         Es necesario ingresar correo electrónico
      </div>
     </fieldset>
-    <button type="submit"
+    <button type="submit" [disabled]="!formulario.valid"
             class="btn btn-primary">Enviar
     </button>
+
 </form>

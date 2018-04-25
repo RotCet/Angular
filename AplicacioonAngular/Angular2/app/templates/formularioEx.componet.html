@@ -1,0 +1,30 @@
+<form class="panel-body" [formGroup]="formulario"  (ngSubmit)="enviarFormulario()">
+        <fieldset class="form-group">
+                <i class="glyphicon glyphicon glyphicon-phone"></i>  
+            <label for="telefono">Teléfono</label>                     
+            <input type="text"
+                   class="form-control"
+                   id="telefono"
+                   formControlName="telefono">  
+                   <div *ngIf="!formulario.controls['telefono'].valid">
+                       <div class="alert alert-danger" *ngIf="formulario.controls['telefono'].errors['required']">
+                           El campo es requerido
+                       </div>
+                       <div class="alert alert-danger" *ngIf="formulario.controls['telefono'].errors['pattern']">
+                            El campo debe ser mínimo de 4 caracteres
+                        </div>
+                   </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <i class="glyphicon glyphicon glyphicon-home"></i> 
+            <label for="direccion">Dirección</label>
+            <input type="direccion"
+                   class="form-control"
+                   id="direccion"
+                   formControlName="direccion">
+        </fieldset>
+        <button type="submit" 
+                class="btn btn-primary"
+                [disabled]="!formulario.valid">Enviar
+        </button>
+    </form>

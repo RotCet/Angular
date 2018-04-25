@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 //pipes o filtros
 var FormularioComponent = (function () {
     function FormularioComponent() {
+        this.estudiante = { nombre: 'Rouse', correo: 'grousss@hotmail.com' };
     }
     FormularioComponent.prototype.enviarFormulario = function (formulario) {
         alert("Usuario:" + formulario.value.nombre);
@@ -17,7 +18,8 @@ var FormularioComponent = (function () {
     FormularioComponent = __decorate([
         core_1.Component({
             selector: 'mi-Formularios',
-            templateUrl: 'app/templates/formulario.component.html'
+            templateUrl: 'app/templates/formulario.component.html',
+            styles: ["\n             input.ng-invalid.ng-touched{\n                 border-left:3px solid red;\n                 color: red;\n             }\n             input.ng-valid{\n                border-left:3px solid green;\n                color: black;\n             }"]
         })
     ], FormularioComponent);
     return FormularioComponent;

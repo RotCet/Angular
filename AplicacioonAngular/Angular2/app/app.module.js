@@ -9,19 +9,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
+var forms_2 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var estudiantes_components_1 = require("./estudiantes.components");
 var maestos_components_1 = require("./maestos.components");
 var aFahrenheit_pipe_1 = require("./aFahrenheit.pipe");
 var aStratus_pipes_1 = require("./aStratus.pipes");
 var formulario_component_1 = require("./formulario.component");
+var formularioEx_component_1 = require("./formularioEx.component");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, estudiantes_components_1.EstudiantesComponent, maestos_components_1.MaestrosComponent, aFahrenheit_pipe_1.AFahrenheitPipe, aStratus_pipes_1.AStatus, formulario_component_1.FormularioComponent],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule],
+            declarations: [app_component_1.AppComponent, estudiantes_components_1.EstudiantesComponent, maestos_components_1.MaestrosComponent, aFahrenheit_pipe_1.AFahrenheitPipe, aStratus_pipes_1.AStatus, formulario_component_1.FormularioComponent, formularioEx_component_1.FormularioExComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
