@@ -1,0 +1,42 @@
+<form (ngSubmit)="enviarFormulario(formulario)" #formulario="ngForm">
+  <fieldset class="form-group">
+    <label for="nombre">Nombre</label>
+      <input type="text"
+              class="form-control"
+              id="nombre"
+              [ngModel]="estudiante.nombre"
+              name="nombre"
+              #nombre="ngModel"
+              minlength="5"
+              required>
+      <div *ngIf="nombre.touched && nombre.errors">
+        <div class="alert alert-danger" 
+          *ngIf="nombre.errors.required">
+          El campo nombre es requerido y no puede estar vacio.
+        </div>
+        <div class="alert alert-danger" 
+          *ngIf="nombre.errors.minlength">
+          El número mínimo de caracteres es 5.
+        </div>
+      </div>
+      
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label for="correo">Correo Electrónico</label>
+      <input type="email"
+              class="form-control"
+              id="correoElectronico"
+              [ngModel]="estudiante.correo"
+              name="correo"
+              #correo="ngModel"
+              required>
+      <div class="alert alert-danger" 
+          *ngIf="!correo.valid && correo.touched">
+            El campo correo electrónico es requerido y no puede estar vacio.
+      </div>
+  </fieldset>
+
+  <button type="submit" [disabled]="!formulario.valid"
+          class="btn btn-primary">Enviar</button>
+</form>

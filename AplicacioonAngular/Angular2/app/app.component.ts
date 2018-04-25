@@ -22,7 +22,9 @@ import { Component,Input} from '@angular/core';
                 </span>
                 </div>
 
-              <div *ngSwitchCase="'argentina'">Información de Argentina</div>
+              <div *ngSwitchCase="'argentina'">Información de Argentina
+                   <mi-Formularios></mi-Formularios> 
+              </div>
               <div *ngSwitchCase="'bolivia'">Información de Bolivia</div>
               <div *ngSwitchCase="'brazil'">Información de Brazil</div>
               <div *ngSwitchCase="'chile'">Información de Chile</div>
@@ -32,7 +34,7 @@ import { Component,Input} from '@angular/core';
                 (seleccionados)=mostrarEstrudiante($event) 
                 ></estudiantes>
               </div>
-           </div>         
+           </div>      
            `   
 })
 export class AppComponent  { 
