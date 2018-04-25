@@ -1,6 +1,6 @@
 
 import {Component,Input, Output,EventEmitter} from '@angular/core'
-
+import {EstudiantesService}from './estudiantes.service'
 //Para exportar componentes de generan decoradores
 //Enlace de datos de una propiedad o evento
 //Enlace [] componente
@@ -12,7 +12,8 @@ import {Component,Input, Output,EventEmitter} from '@angular/core'
 
 @Component({
    selector:'estudiantes',
-   templateUrl:'app/templates/estudiantes.templates.html'
+   templateUrl:'app/templates/estudiantes.templates.html',
+   providers:[EstudiantesService]
 }) 
 export class EstudiantesComponent{
     //variable para conectar diferentes componentes con un decorador @
@@ -23,11 +24,23 @@ export class EstudiantesComponent{
     //Agrega Contenido a la clase y agrega una interpolacion
     titulo="Lista de Estudiantes";
     description="Ingresa Calificación";
-    estudiantes=['Andrea','María'];
+    estudiantes:string[];
     imagenUR="https://gcdn.emol.cl/mascotas/files/2018/03/perro-raro.jpg";
     redondeada=true;
     pading=true;
     n=1;
+    //ayuda a encapsular información
+    constructor(estudiantesService:EstudiantesService){
+        this.estudiantes=estudiantesService.listaEstudiantes('Universidad Nacional KBAE');
+    }
+    listaEstudiantesG(universidad):Array<object>{
+        if(universidad=="Universidad Nacional KBAE"){
+             return [{nombre: 'Karina',apellido:'Sanchez'},{nombre: 'Lupita',apellido:'Reyna'}];
+         }
+         else{
+             return [{nombre: 'Paulo',apellido:'Sanchez'},{nombre: 'Eleazar',apellido:'Reyna'}];
+         }
+ }
     alerta(){
         alert("si funciona");
         
@@ -35,14 +48,7 @@ export class EstudiantesComponent{
     cambiar(evento){
         this.titulo=evento.target.value;
     }
-    listaEstudiantes():Array<object>{
-           if(this.universidad=="Universidad Nacional KBAE"){
-            return [{nombre: 'Karina',apellido:'Sanchez'},{nombre: 'Lupita',apellido:'Reyna'}];
-            }
-            else{
-                return [{nombre: 'Paulo',apellido:'Sanchez'},{nombre: 'Eleazar',apellido:'Reyna'}];
-            }
-    }
+    
     listaMaterias():Array<string>{
         if(this.materias=="10")
         {

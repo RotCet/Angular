@@ -11,14 +11,17 @@ import { Component,Input} from '@angular/core';
                 <li (click)="pais='brazil'"><a>Brazil</a></li>
                 <li (click)="pais='chile'"><a>Chile</a></li>
               </ul>
-           </div>
-           
+           </div>           
            <div  class="container" [ngSwitch]="pais">
+                <div class="btn btn-primary btn-block">
+                El status del empleado es: {{status| aStatus}}
+                </div>
                 <div class="jumbotron"> La temperatura es 
                 <span [ngClass]="{'text-danger':temperatura > 30, 'text-warning':temperatura<=30}">
                   {{temperatura | aFahrenheit:2}} °F
                 </span>
                 </div>
+
               <div *ngSwitchCase="'argentina'">Información de Argentina</div>
               <div *ngSwitchCase="'bolivia'">Información de Bolivia</div>
               <div *ngSwitchCase="'brazil'">Información de Brazil</div>
@@ -29,25 +32,19 @@ import { Component,Input} from '@angular/core';
                 (seleccionados)=mostrarEstrudiante($event) 
                 ></estudiantes>
               </div>
-           </div>
-           
-            
-
-
-            `    
+           </div>         
+           `   
 })
-
 export class AppComponent  { 
     pais:string;
     temperatura:number=20;
+    status:"InActivo";
     laUniversodad="Universidad Nacional KBAE"; 
     laMateria="8";
 
     losMaestros="Maestros";
     mostrarEstrudiante(evento):void{
     alert(evento.nombre);
-    //Menú
-     
+    //Menú     
   }
-
 }

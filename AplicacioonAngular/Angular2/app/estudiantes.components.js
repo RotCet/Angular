@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var estudiantes_service_1 = require("./estudiantes.service");
 //Para exportar componentes de generan decoradores
 //Enlace de datos de una propiedad o evento
 //Enlace [] componente
@@ -19,30 +20,31 @@ var core_1 = require("@angular/core");
 //inputs:['universidad']
 //No se importa Input y se elimina de la variable  @Input() 
 var EstudiantesComponent = (function () {
-    function EstudiantesComponent() {
+    //ayuda a encapsular información
+    function EstudiantesComponent(estudiantesService) {
         this.seleccionados = new core_1.EventEmitter();
         //Agrega Contenido a la clase y agrega una interpolacion
         this.titulo = "Lista de Estudiantes";
         this.description = "Ingresa Calificación";
-        this.estudiantes = ['Andrea', 'María'];
         this.imagenUR = "https://gcdn.emol.cl/mascotas/files/2018/03/perro-raro.jpg";
         this.redondeada = true;
         this.pading = true;
         this.n = 1;
+        this.estudiantes = estudiantesService.listaEstudiantes('Universidad Nacional KBAE');
     }
-    EstudiantesComponent.prototype.alerta = function () {
-        alert("si funciona");
-    };
-    EstudiantesComponent.prototype.cambiar = function (evento) {
-        this.titulo = evento.target.value;
-    };
-    EstudiantesComponent.prototype.listaEstudiantes = function () {
-        if (this.universidad == "Universidad Nacional KBAE") {
+    EstudiantesComponent.prototype.listaEstudiantesG = function (universidad) {
+        if (universidad == "Universidad Nacional KBAE") {
             return [{ nombre: 'Karina', apellido: 'Sanchez' }, { nombre: 'Lupita', apellido: 'Reyna' }];
         }
         else {
             return [{ nombre: 'Paulo', apellido: 'Sanchez' }, { nombre: 'Eleazar', apellido: 'Reyna' }];
         }
+    };
+    EstudiantesComponent.prototype.alerta = function () {
+        alert("si funciona");
+    };
+    EstudiantesComponent.prototype.cambiar = function (evento) {
+        this.titulo = evento.target.value;
     };
     EstudiantesComponent.prototype.listaMaterias = function () {
         if (this.materias == "10") {
@@ -77,8 +79,10 @@ var EstudiantesComponent = (function () {
     EstudiantesComponent = __decorate([
         core_1.Component({
             selector: 'estudiantes',
-            templateUrl: 'app/templates/estudiantes.templates.html'
-        })
+            templateUrl: 'app/templates/estudiantes.templates.html',
+            providers: [estudiantes_service_1.EstudiantesService]
+        }),
+        __metadata("design:paramtypes", [estudiantes_service_1.EstudiantesService])
     ], EstudiantesComponent);
     return EstudiantesComponent;
 }());
