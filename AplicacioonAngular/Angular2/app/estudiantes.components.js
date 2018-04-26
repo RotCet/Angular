@@ -26,7 +26,7 @@ var EstudiantesComponent = (function () {
         //Agrega Contenido a la clase y agrega una interpolacion
         this.titulo = "Lista de Estudiantes";
         this.description = "Ingresa Calificación";
-        this.imagenUR = "https://gcdn.emol.cl/mascotas/files/2018/03/perro-raro.jpg";
+        this.imagenUR = "https://blog.dataprius.com/wp-content/uploads/2017/09/envio-correos-destino.jpg";
         this.redondeada = true;
         this.pading = true;
         this.n = 1;

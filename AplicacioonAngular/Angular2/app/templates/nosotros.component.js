@@ -11,24 +11,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-//pipes o filtros
-var FormularioComponent = (function () {
-    function FormularioComponent(router) {
+var NosotrosComponent = (function () {
+    function NosotrosComponent(router) {
         this.router = router;
         this.estudiante = { nombre: 'Rouse', correo: 'grousss@hotmail.com' };
     }
-    FormularioComponent.prototype.enviarFormulario = function (formulario) {
-        alert("Usuario:" + formulario.value.nombre);
+    NosotrosComponent.prototype.enviarFormulario = function (formulario) {
+        //alert("Usuario:"+ formulario.value.nombre);
+        this.router.navigate(['inicio']);
     };
-    FormularioComponent = __decorate([
+    NosotrosComponent = __decorate([
         core_1.Component({
-            selector: 'mi-Formularios',
-            templateUrl: 'app/templates/formulario.component.html',
-            styles: ["\n             input.ng-invalid.ng-touched{\n                 border-left:3px solid red;\n                 color: red;\n             }\n             input.ng-valid{\n                border-left:3px solid green;\n                color: black;\n             }"]
+            templateUrl: './app/templates/nosotros.component.html',
+            styles: ["\n    input.ng-invalid.ng-touched{\n        border-left:3px solid red;\n        color: red;\n    }\n    input.ng-valid{\n       border-left:3px solid green;\n       color: black;\n    }"]
         }),
         __metadata("design:paramtypes", [router_1.Router])
-    ], FormularioComponent);
-    return FormularioComponent;
+    ], NosotrosComponent);
+    return NosotrosComponent;
 }());
-exports.FormularioComponent = FormularioComponent;
-//# sourceMappingURL=formulario.component.js.map
+exports.NosotrosComponent = NosotrosComponent;
+//# sourceMappingURL=nosotros.component.js.map

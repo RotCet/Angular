@@ -1,5 +1,5 @@
 <form (ngSubmit)="enviarFormulario(formulario)" #formulario="ngForm"  class="panel-body"  >
-   
+                <br>
     <fieldset class="form-group">
             <i class="glyphicon glyphicon-user"></i>
            <label for="nombre">Usuario</label>          
@@ -41,5 +41,5 @@
     <button type="submit" [disabled]="!formulario.valid"
             class="btn btn-primary">Enviar
     </button>
-
+    
 </form>

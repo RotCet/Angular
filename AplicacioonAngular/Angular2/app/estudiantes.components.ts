@@ -25,7 +25,7 @@ export class EstudiantesComponent{
     titulo="Lista de Estudiantes";
     description="Ingresa Calificación";
     estudiantes:string[];
-    imagenUR="https://gcdn.emol.cl/mascotas/files/2018/03/perro-raro.jpg";
+    imagenUR="https://blog.dataprius.com/wp-content/uploads/2017/09/envio-correos-destino.jpg";
     redondeada=true;
     pading=true;
     n=1;

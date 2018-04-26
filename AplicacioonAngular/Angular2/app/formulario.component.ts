@@ -1,6 +1,7 @@
 import { Component,Input, style} from '@angular/core';
 import { print } from 'util';
 import { NgForm } from '@angular/forms';
+import {Router} from '@angular/router';
 //pipes o filtros
 
 @Component({
@@ -17,9 +18,12 @@ import { NgForm } from '@angular/forms';
              }`]
 })
 export class FormularioComponent  { 
+  constructor(private router:Router){}
    estudiante={nombre: 'Rouse',correo:'grousss@hotmail.com'}  
      enviarFormulario(formulario:NgForm){
-        alert("Usuario:"+ formulario.value.nombre);
+       alert("Usuario:"+ formulario.value.nombre);
+        
+
     }
   }
 
