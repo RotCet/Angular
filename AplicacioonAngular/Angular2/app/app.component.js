@@ -19,8 +19,8 @@ var AppComponent = (function () {
     // alert(evento.nombre);
     //Menú     
     // }
-    AppComponent.prototype.mostrarEstrudiante = function () {
-        // alert(evento.nombre);
+    AppComponent.prototype.mostrarEstrudiante = function (evento) {
+        alert(evento.nombre);
         //Menú     
     };
     AppComponent = __decorate([
