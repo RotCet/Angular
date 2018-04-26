@@ -5,7 +5,7 @@ import { Component,Input} from '@angular/core';
   selector: 'mi-aplicacion',
   template: `
   <div class="container">  
-    <div class="container-fluid" style="color:#000000;height:80px;background-image: url('http://webproduccionaudiovisual.com/wp-content/uploads/2016/04/app-tecnologia-tablets-y-moviles.jpg'); text-align:right; ">       
+    <div class="container-fluid" style="color:#000000;height:80px; text-align:right; ">       
     <h1>Bienvenidos </h1>
     
     </div> 
@@ -67,8 +67,12 @@ export class AppComponent  {
     laMateria="8";
 
     losMaestros="Maestros";
-    mostrarEstrudiante(evento):void{
-    alert(evento.nombre);
+    //mostrarEstrudiante(evento):void{
+   // alert(evento.nombre);
     //Menú     
-  }
+ // }
+ mostrarEstrudiante(evento):void{
+   alert(evento.nombre);
+   //Menú     
+ }
 }
