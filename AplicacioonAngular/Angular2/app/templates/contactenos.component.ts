@@ -11,7 +11,7 @@ export class ContactenosComponent implements OnInit{
 
     }
     listaDeEmpleados(){
-        this.empleados=this.empleadoService.listaEmpleados();
+        this.empleadoService.listaDeEmpleados().then(respuesta => this.empleados=respuesta);
     }
     ngOnInit(){
         this.listaDeEmpleados();

@@ -27,12 +27,13 @@ var empleado_service_1 = require("./empleado.service");
 //enrutar componente pero enviando parametros
 var empleado_component_1 = require("./empleado.component");
 ///importar HHTModile
+var http_1 = require("@angular/http");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule, app_routing_1.routing],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule, app_routing_1.routing, http_1.HttpModule],
             declarations: [app_component_1.AppComponent, estudiantes_components_1.EstudiantesComponent,
                 maestos_components_1.MaestrosComponent,
                 aFahrenheit_pipe_1.AFahrenheitPipe,

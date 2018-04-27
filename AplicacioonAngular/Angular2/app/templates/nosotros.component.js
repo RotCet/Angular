@@ -11,21 +11,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var http_1 = require("@angular/http");
 var NosotrosComponent = (function () {
-    function NosotrosComponent(router) {
+    function NosotrosComponent(router, http) {
         this.router = router;
+        this.http = http;
         this.estudiante = { nombre: 'Rouse', correo: 'grousss@hotmail.com' };
     }
     NosotrosComponent.prototype.enviarFormulario = function (formulario) {
-        //alert("Usuario:"+ formulario.value.nombre);
-        this.router.navigate(['inicio']);
+        //alert("Usuario:"+ formulario.value.nombre); se activa para navegar a otroa página
+        this.enviarInformacion({ nombre: formulario.value.nombre,
+            correo: formulario.value.correo });
+        alert("El servicio fue llamado");
+        // this.router.navigate(['inicio']); 
+    };
+    NosotrosComponent.prototype.enviarInformacion = function (usuario) {
+        var info = JSON.stringify(usuario);
+        return this.http.post('https://baseangular-b68c7.firebaseio.com/data.json', info).toPromise().then(function (respuesta) { return alert(respuesta); });
     };
     NosotrosComponent = __decorate([
         core_1.Component({
             templateUrl: './app/templates/nosotros.component.html',
             styles: ["\n    input.ng-invalid.ng-touched{\n        border-left:3px solid red;\n        color: red;\n    }\n    input.ng-valid{\n       border-left:3px solid green;\n       color: black;\n    }"]
         }),
-        __metadata("design:paramtypes", [router_1.Router])
+        __metadata("design:paramtypes", [router_1.Router, http_1.Http])
     ], NosotrosComponent);
     return NosotrosComponent;
 }());

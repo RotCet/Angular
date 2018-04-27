@@ -25,10 +25,10 @@ import { EmpleadoService } from './empleado.service';
 import { EmpleadoComponent } from './empleado.component'
 
 ///importar HHTModile
-
+import { HttpModule } from '@angular/http';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ,ReactiveFormsModule,routing],
+  imports:      [ BrowserModule, FormsModule ,ReactiveFormsModule,routing,HttpModule],
   declarations: [ AppComponent,EstudiantesComponent
                  ,MaestrosComponent
                  ,AFahrenheitPipe

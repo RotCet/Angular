@@ -18,7 +18,8 @@ var ContactenosComponent = (function () {
         this.router = router;
     }
     ContactenosComponent.prototype.listaDeEmpleados = function () {
-        this.empleados = this.empleadoService.listaEmpleados();
+        var _this = this;
+        this.empleadoService.listaDeEmpleados().then(function (respuesta) { return _this.empleados = respuesta; });
     };
     ContactenosComponent.prototype.ngOnInit = function () {
         this.listaDeEmpleados();

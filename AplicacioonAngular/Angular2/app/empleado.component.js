@@ -16,12 +16,15 @@ var EmpleadoComponent = (function () {
     function EmpleadoComponent(route, service) {
         this.route = route;
         this.service = service;
-        var id = +route.snapshot.params['id'];
-        this.empleado = service.informacionEmpleado(id);
     }
+    EmpleadoComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var id = +this.route.snapshot.params['id'];
+        this.service.informacionEmpleado(id).then(function (respuesta) { return _this.empleado = respuesta; });
+    };
     EmpleadoComponent = __decorate([
         core_1.Component({
-            template: '{{empleado.nombre}}'
+            template: "<div *ngIf=\"empleado\">\n                    Nombre: {{ empleado.name }}\n                    <br/>\n                    Correo Electr\u00F3nico: {{ empleado.email }}\n              </div>"
         }),
         __metadata("design:paramtypes", [router_1.ActivatedRoute, empleado_service_1.EmpleadoService])
     ], EmpleadoComponent);
