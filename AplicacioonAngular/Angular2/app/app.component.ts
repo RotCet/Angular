@@ -5,7 +5,7 @@ import { Component,Input} from '@angular/core';
   selector: 'mi-aplicacion',
   template: `
   <div class="container">  
-    <div class="container-fluid" style="color:#000000;height:80px; text-align:right; ">       
+    <div class="container-fluid" style="color:#000000;height:80px;background-image: url('https://static8.depositphotos.com/1522993/998/i/950/depositphotos_9984213-stock-photo-elegant-web-background-with-blue.jpg'); text-align:right; ">       
     <h1>Bienvenidos </h1>
     
     </div> 
@@ -71,7 +71,7 @@ export class AppComponent  {
    // alert(evento.nombre);
     //Menú     
  // }
- mostrarEstrudiante(evento):void{
+ mostrarEstrudiante(evento:any):void{
    alert(evento.nombre);
    //Menú     
  }

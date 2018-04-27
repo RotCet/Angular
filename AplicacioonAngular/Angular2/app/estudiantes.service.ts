@@ -1,5 +1,5 @@
 export class EstudiantesService{
-    listaEstudiantes(universidad):Array<string>{
+    listaEstudiantes(universidad:any):Array<string>{
         if(universidad=="Universidad Nacional KBAE"){
              return ['Karina','Lupita'];
          }

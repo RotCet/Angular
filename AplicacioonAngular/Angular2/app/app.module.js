@@ -24,6 +24,9 @@ var contactenos_component_1 = require("./templates/contactenos.component");
 var app_routing_1 = require("./app.routing");
 //Enviar datos
 var empleado_service_1 = require("./empleado.service");
+//enrutar componente pero enviando parametros
+var empleado_component_1 = require("./empleado.component");
+///importar HHTModile
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,7 +41,8 @@ var AppModule = (function () {
                 formularioEx_component_1.FormularioExComponent,
                 inicio_component_1.InicioComponent,
                 nosotros_component_1.NosotrosComponent,
-                contactenos_component_1.ContactenosComponent],
+                contactenos_component_1.ContactenosComponent,
+                empleado_component_1.EmpleadoComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [empleado_service_1.EmpleadoService]
         })

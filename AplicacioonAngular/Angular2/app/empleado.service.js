@@ -7,6 +7,9 @@ var EmpleadoService = (function () {
     EmpleadoService.prototype.listaEmpleados = function () {
         return arreglo_empleado_1.EMPLEADOS;
     };
+    EmpleadoService.prototype.informacionEmpleado = function (id) {
+        return arreglo_empleado_1.EMPLEADOS.find(function (empleado) { return empleado.id === id; });
+    };
     return EmpleadoService;
 }());
 exports.EmpleadoService = EmpleadoService;

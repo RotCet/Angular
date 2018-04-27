@@ -20,6 +20,13 @@ import { routing } from './app.routing';
 
 //Enviar datos
 import { EmpleadoService } from './empleado.service';
+
+//enrutar componente pero enviando parametros
+import { EmpleadoComponent } from './empleado.component'
+
+///importar HHTModile
+
+
 @NgModule({
   imports:      [ BrowserModule, FormsModule ,ReactiveFormsModule,routing],
   declarations: [ AppComponent,EstudiantesComponent
@@ -30,7 +37,8 @@ import { EmpleadoService } from './empleado.service';
                  ,FormularioExComponent
                 ,InicioComponent
                 ,NosotrosComponent
-                ,ContactenosComponent],
+                ,ContactenosComponent
+              ,EmpleadoComponent],
   bootstrap:    [ AppComponent ],
   providers:   [EmpleadoService]
 })

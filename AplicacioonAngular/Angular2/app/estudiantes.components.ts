@@ -33,7 +33,7 @@ export class EstudiantesComponent{
     constructor(estudiantesService:EstudiantesService){
         this.estudiantes=estudiantesService.listaEstudiantes('Universidad Nacional KBAE');
     }
-    listaEstudiantesG(universidad):Array<object>{
+    listaEstudiantesG(universidad:any):Array<object>{
         if(universidad=="Universidad Nacional KBAE"){
              return [{nombre: 'Karina',apellido:'Sanchez'},{nombre: 'Lupita',apellido:'Reyna'}];
          }
@@ -45,7 +45,7 @@ export class EstudiantesComponent{
         alert("si funciona");
         
     }
-    cambiar(evento){
+    cambiar(evento:any){
         this.titulo=evento.target.value;
     }
     
@@ -62,7 +62,7 @@ export class EstudiantesComponent{
     listaMaestros():Array<string>{        
             return ['David','Ernesto'];       
     }
-    ClicEstudiante(evento):void{
+    ClicEstudiante(evento:any):void{
         this.seleccionados.emit({nombre: evento.target.textContent});
     }
   

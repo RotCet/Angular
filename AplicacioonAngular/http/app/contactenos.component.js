@@ -8,31 +8,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var empleado_service_1 = require("../empleado.service");
-var router_1 = require("@angular/router");
+var core_1 = require('@angular/core');
+var forms_1 = require('@angular/forms');
+var router_1 = require('@angular/router');
 var ContactenosComponent = (function () {
-    function ContactenosComponent(empleadoService, router) {
-        this.empleadoService = empleadoService;
+    function ContactenosComponent(router) {
         this.router = router;
+        this.formulario = new forms_1.FormGroup({
+            nombre: new forms_1.FormControl('', [
+                forms_1.Validators.required,
+                forms_1.Validators.pattern("^.{4,}$")
+            ]),
+            correo: new forms_1.FormControl('', [forms_1.Validators.required, this.elCorreoNoEsUnico])
+        });
     }
-    ContactenosComponent.prototype.listaDeEmpleados = function () {
-        this.empleados = this.empleadoService.listaEmpleados();
+    ContactenosComponent.prototype.enviarFormulario = function () {
+        console.log(this.formulario);
+        this.router.navigate(['nosotros']);
     };
-    ContactenosComponent.prototype.ngOnInit = function () {
-        this.listaDeEmpleados();
-    };
-    ContactenosComponent.prototype.clickEmpleado = function (empleado) {
-        this.router.navigate(['empleado', empleado.id]);
+    ContactenosComponent.prototype.elCorreoNoEsUnico = function (control) {
+        var correos = ['jose@ibm.com', 'carlos@ibm.com'];
+        if (correos.indexOf(control.value) != -1) {
+            return { elCorreoNoEsUnico: true };
+        }
+        return null;
     };
     ContactenosComponent = __decorate([
         core_1.Component({
-            templateUrl: './app/templates/contactenos.component.html'
-        })
-        //agrega interface implements OnInit
-        ,
-        __metadata("design:paramtypes", [empleado_service_1.EmpleadoService, router_1.Router])
+            templateUrl: '/app/contactenos.component.html'
+        }), 
+        __metadata('design:paramtypes', [router_1.Router])
     ], ContactenosComponent);
     return ContactenosComponent;
 }());
