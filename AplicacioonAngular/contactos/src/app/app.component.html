@@ -3,6 +3,6 @@
 </h1>
 <ul>
   <li class="text" *ngFor="let item of items | async">
-    {{item.name}}
+    {{item | json}}
   </li>
 </ul>

@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 import { AppComponent } from './app.component';
-
 export const environment = {
   production: false,
   firebase: {
@@ -19,6 +22,7 @@ export const environment = {
   }
 };
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -27,7 +31,7 @@ export const environment = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase,'contactos')
   ],
   providers: [],
   bootstrap: [AppComponent]
